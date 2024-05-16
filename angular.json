@@ -81,7 +81,8 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/carousel-images"
             ],
             "styles": [
               "src/styles.css"
@@ -91,5 +92,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d99ccf84-01ac-440c-be73-2f145858239b"
   }
 }

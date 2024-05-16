@@ -1,0 +1,18 @@
+<div class="dsc-carousel" [ngStyle]="{'min-height':finalHeight}">
+  <div class="dsc-carousel__btns">
+    <span (click)="setBack()"><svg class="h-8 w-8"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="8" y1="12" x2="16" y2="12" />  <line x1="8" y1="12" x2="12" y2="16" />  <line x1="8" y1="12" x2="12" y2="8" /></svg></span>
+    <span (click)="setNext()"><svg class="h-8 w-8"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polyline points="12 16 16 12 12 8" />  <line x1="8" y1="12" x2="16" y2="12" /></svg></span>
+  </div>
+  <div class="dsc-carousel__content">
+    <ng-container *ngFor="let section of items;">
+      <div class="dsc-carousel__content-item" [ngStyle]="{'background-image':'url('+section.image+')','margin-left':section.marginLeft+'%'}">
+        <h1>{{section.title?.first}} <span>{{section.title?.second}}</span></h1>
+        <p>{{section.subtitle}}</p>
+      </div>
+    </ng-container>
+  </div>
+  <div class="dsc-carousel__steps">
+    <div class="dsc-carousel__steps-step dsc-carousel__steps-step-{{currentPosition === item.id ? 'active':''}}" *ngFor="let item of items" (click)="setCurrentPosition(item.id)">
+    </div>
+  </div>
+</div>
